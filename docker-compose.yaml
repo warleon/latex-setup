@@ -8,5 +8,5 @@ services:
       - ./src:/workspace/source # Volume for LaTeX source files
       - ./out:/workspace/output # Volume for compiled output files
     command: >
-      sh -c "pdflatex -output-directory=/workspace/output /workspace/source/main.tex"
+      sh -c "pdflatex -interaction=nonstopmode -output-directory=/workspace/output /workspace/source/main.tex"
     working_dir: /workspace/source
