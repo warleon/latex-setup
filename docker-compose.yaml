@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  latex-compiler:
+    build: .
+    container_name: latex-compiler
+    volumes:
+      - ./src:/workspace/source # Volume for LaTeX source files
+      - ./out:/workspace/output # Volume for compiled output files
+    command: >
+      sh -c "pdflatex -output-directory=/workspace/output /workspace/source/main.tex"
+    working_dir: /workspace/source
